@@ -12,6 +12,8 @@ export default async function Home() {
   const database = client.db('forum');
   let result = await database.collection('post').find().toArray();
 
+  console.log(result);
+
   return (
     <div className="">
       {result[0].title}
