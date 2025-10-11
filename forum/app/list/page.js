@@ -14,6 +14,9 @@ export default async List => {
     _id: item._id.toString()
     }));
 
+    console.log("iyyu list");
+    console.log(result);
+
     return (
     <div className="list-bg">
         <ListItem result={result}/>

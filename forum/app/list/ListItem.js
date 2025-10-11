@@ -17,17 +17,21 @@ export default function ListItem(props) {
             <DetailLink />
             <Link href={'/edit/' + result[i]._id}>수정</Link>
             <span onClick={(e)=>{
-            //     fetch('/api/post/delete', {method : 'DELETE', body : result[i]._id})
-            //    // .then(()=>{window.location.reload()})
-            //    .then((r)=> r.json())
-            //    .then(()=>{
-            //     e.target.parentElement.style.opacity = 0;
-            //     setTimeout(()=>{
-            //         e.target.parentElement.style.display = 'none'
-            //     }, 1000);
-            //    })
+                fetch('/api/post/delete', {method : 'DELETE', body: JSON.stringify(
+                    {id: result[i]._id, 
+                    email : result[i].author,
+                    }
+                )})
+               // .then(()=>{window.location.reload()})
+               .then((r)=> r.json())
+               .then(()=>{
+                e.target.parentElement.style.opacity = 0;
+                setTimeout(()=>{
+                    e.target.parentElement.style.display = 'none'
+                }, 1000);
+               })
             //fetch('/api/test?name=yu&age=20');
-            fetch('/api/abc/kim');
+            //fetch('/api/abc/kim');
             }}>🗑️</span>
             <p>1월 1일</p>
             </div>

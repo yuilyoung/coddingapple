@@ -1,4 +1,8 @@
+'use client'
+
 export default function Write(){
+  console.log("iyyu write");
+
   return (
     <div className="p-20">
       <h4>글작성</h4>
